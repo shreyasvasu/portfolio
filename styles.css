@@ -299,7 +299,7 @@ body.modal-open { overflow: hidden; }
 .stat .num { font-size: clamp(44px, 5vw, 68px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
 .stat .plus { font-size: 40px; font-weight: 800; color: var(--coral); }
 .stat p { color: rgba(244,237,224,.7); font-size: 14.5px; margin-top: 8px; max-width: 220px; }
-.awards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .award {
   display: flex; gap: 18px; align-items: center;
   background: var(--navy-2); border: 1px solid rgba(244,237,224,.1);
@@ -374,6 +374,9 @@ body.modal-open { overflow: hidden; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1080px) {
+  .nav-inner { padding: 18px 24px; column-gap: 20px; }
+  .nav-links { gap: 18px; }
+  .brand { font-size: 16px; }
   .focus-grid { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
 }
