@@ -4,36 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shreyas Vasu | AI/ML Engineer</title>
-  <meta name="description" content="Shreyas Vasu: AI/ML undergraduate building edge AI, resilient systems and honest ML. Founder of Epoch Dev Community.">
+  <meta name="description" content="Shreyas Vasu: AI/ML undergraduate from Bengaluru building edge AI, resilient systems and honest ML. Founder of Epoch Dev Community.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314213D'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23F4EDE0'>SV</text><circle cx='50' cy='14' r='5' fill='%23FF6B5B'/></svg>">
 </head>
 <body>
 
+<!-- ================= INTRO ================= -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-blob b1"></div><div class="intro-blob b2"></div><div class="intro-blob b3"></div>
+  <div class="intro-top"><span>shreyas's lab notebook · p. 01</span><span>click anywhere to skip</span></div>
+  <div class="intro-center">
+    <p class="intro-line">booting up my little corner<br>of the <em>internet</em>…</p>
+    <div class="intro-bar"><span></span></div>
+    <p class="intro-foot">bengaluru · edge ai · v2026.11</p>
+  </div>
+</div>
+
 <!-- ================= NAV ================= -->
 <header class="nav" id="top">
   <nav class="nav-inner">
+    <a href="#home" class="logo" aria-label="Shreyas Vasu, home">
+      <span class="logo-spark">✦</span>SHREYAS.AI
+    </a>
     <div class="nav-links" id="navLinks">
-      <a href="#home" class="active">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume>Resume</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#wins">Wins</a>
+      <a href="#toolkit">Toolkit</a>
       <a href="#contact">Contact</a>
-    </div>
-    <a href="#home" class="brand">Shreyas Vasu's Portfolio</a>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/shreyas-vasu-4b1271333/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.3 21 14.7V21h-4v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95V21H9z"/></svg>
-      </a>
-      <a href="https://github.com/shreyasvasu" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-      </a>
-      <a href="mailto:mathsshreyas@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.3l8 5.2 8-5.2V7zm16 2.7-8 5.2-8-5.2V17h16z"/></svg>
-      </a>
+      <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume class="nav-cta">Resume</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
@@ -43,358 +46,348 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
-  <div class="hero-photo">
-    <div class="photo-frame">
-      <img src="assets/shreyas.webp" alt="Portrait of Shreyas Vasu">
+  <div class="hero-grain"></div>
+
+  <!-- floating cursors -->
+  <div class="cursor c1" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z"/></svg><span>ML engineer</span></div>
+  <div class="cursor c2" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z"/></svg><span>Founder @ Epoch</span></div>
+  <div class="cursor c3" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z"/></svg><span>Edge AI tinkerer</span></div>
+  <div class="cursor c4" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1 1l5 14 2-6 6-2z"/></svg><span>Hackathon builder</span></div>
+
+  <div class="hero-inner">
+    <div class="chips">
+      <span class="chip">Shreyas</span>
+      <span class="chip">builds</span>
+      <span class="chip">&amp; ships AI</span>
+      <span class="chip chip-cream">from Bengaluru</span>
+      <a class="chip chip-li" href="https://www.linkedin.com/in/shreyas-vasu-4b1271333/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.3 21 14.7V21h-4v-5.6c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95V21H9z"/></svg>LinkedIn ↗
+      </a>
     </div>
-    <div class="photo-tag">
-      <span class="dot"></span> Open to AI/ML &amp; SWE internships
+
+    <h1 class="sr-only">Shreyas Vasu, AI/ML engineer and founder:</h1>
+    <div class="frame" id="frame">
+      <span class="h h-tl"></span><span class="h h-tr"></span><span class="h h-bl"></span><span class="h h-br"></span>
+      <p class="mega" aria-hidden="true">hello, world!</p>
+      <span class="frame-size" id="frameSize">—</span>
+    </div>
+
+    <p class="hero-intro">
+      AI/ML engineer who builds for places where the cloud, the network, or certainty
+      <mark>can't be taken for granted</mark>. 3rd-year AIML at Global Academy of Technology,
+      founder of Epoch Dev Community, and the person who will ask “but how sure is the model?”
+    </p>
+
+    <div class="hero-cta">
+      <a href="#work" class="pill-btn">Poke the work ↓</a>
+      <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume class="pill-btn pill-ghost">Open resume</a>
     </div>
   </div>
 
-  <div class="hero-copy">
-    <!-- line-art sketches, in the spirit of the reference template -->
-    <svg class="sketch sketch-board" viewBox="0 0 200 140" aria-hidden="true">
-      <!-- ESP32 dev board -->
-      <rect x="20" y="20" width="160" height="100" rx="6"/>
-      <rect x="40" y="38" width="70" height="56" rx="3"/>
-      <rect x="50" y="48" width="50" height="36" rx="2"/>
-      <text x="75" y="70" text-anchor="middle">ESP32</text>
-      <path d="M110 44h40v20h-12v-12h-14v12h-14z"/>
-      <rect x="128" y="76" width="30" height="20" rx="2"/>
-      <circle cx="35" cy="108" r="5"/><circle cx="165" cy="108" r="5"/>
-      <g class="pins"><path d="M30 20v-10M42 20v-10M54 20v-10M66 20v-10M78 20v-10M90 20v-10M102 20v-10M114 20v-10M126 20v-10M138 20v-10M150 20v-10M162 20v-10"/>
-      <path d="M30 120v10M42 120v10M54 120v10M66 120v10M78 120v10M90 120v10M102 120v10M114 120v10M126 120v10M138 120v10M150 120v10M162 120v10"/></g>
-    </svg>
+  <!-- chat bubbles -->
+  <div class="bubble b-1" aria-hidden="true">
+    <span class="avatar">S</span>
+    <div><p class="b-meta"><strong>Shreyas</strong> just now</p><p>Calibrated coverage hit 92.5% 🎯</p></div>
+  </div>
+  <div class="bubble b-2" aria-hidden="true">
+    <span class="avatar avatar-coral">E</span>
+    <div><p class="b-meta"><strong>epoch-bot</strong> 2 min ago</p><p>22 builders · 8 projects shipped 🚀</p></div>
+  </div>
 
-    <svg class="sketch sketch-net" viewBox="0 0 200 160" aria-hidden="true">
-      <!-- neural network -->
-      <g class="edges">
-        <path d="M30 30L100 20M30 30L100 60M30 30L100 100M30 30L100 140"/>
-        <path d="M30 80L100 20M30 80L100 60M30 80L100 100M30 80L100 140"/>
-        <path d="M30 130L100 20M30 130L100 60M30 130L100 100M30 130L100 140"/>
-        <path d="M100 20L170 55M100 60L170 55M100 100L170 55M100 140L170 55"/>
-        <path d="M100 20L170 110M100 60L170 110M100 100L170 110M100 140L170 110"/>
-      </g>
-      <g class="nodes">
-        <circle cx="30" cy="30" r="9"/><circle cx="30" cy="80" r="9"/><circle cx="30" cy="130" r="9"/>
-        <circle cx="100" cy="20" r="9"/><circle cx="100" cy="60" r="9"/><circle cx="100" cy="100" r="9"/><circle cx="100" cy="140" r="9"/>
-        <circle cx="170" cy="55" r="9" class="hot"/><circle cx="170" cy="110" r="9"/>
-      </g>
-    </svg>
+  <!-- polaroid + sticky notes -->
+  <figure class="polaroid" aria-label="Photo of Shreyas Vasu">
+    <span class="tape"></span>
+    <img src="assets/shreyas.webp" alt="Portrait of Shreyas Vasu">
+    <figcaption>me, probably debugging</figcaption>
+  </figure>
 
-    <svg class="sketch sketch-mesh" viewBox="0 0 180 180" aria-hidden="true">
-      <!-- antenna + mesh -->
-      <path d="M90 170V70M70 170l20-100 20 100M76 140h28M80 115h20"/>
-      <circle cx="90" cy="62" r="6"/>
-      <path class="wave" d="M70 45a30 30 0 0 1 40 0M58 32a48 48 0 0 1 64 0M46 19a66 66 0 0 1 88 0"/>
-      <circle cx="22" cy="110" r="6"/><circle cx="158" cy="110" r="6"/><circle cx="30" cy="160" r="6"/><circle cx="150" cy="160" r="6"/>
-      <path class="dash" d="M28 110L84 75M152 110L96 75M30 154L22 116M150 154L158 116M36 160h108"/>
-    </svg>
+  <div class="sticky s-1" aria-hidden="true">Works<br>offline?</div>
+  <div class="sticky s-2" aria-hidden="true">Ship it,<br>then chai ☕</div>
+  <div class="sticky s-3" aria-hidden="true">honest &gt;<br>accurate</div>
 
-    <p class="eyebrow">AI/ML · Edge AI · Full-Stack</p>
-    <h1>I'm Shreyas Vasu,<br>an <span class="hl">AI/ML Engineer</span>.</h1>
-    <p class="lead">
-      I build AI for places where the cloud, the network, or certainty
-      <em>can't be taken for granted</em>.
-    </p>
-    <p class="sub">
-      3rd-year B.E. AIML student at Global Academy of Technology, Bengaluru.
-      Founder of Epoch Dev Community.
-      Scroll down to see what I'm building.
-    </p>
-    <div class="hero-btns">
-      <a class="btn" href="https://www.linkedin.com/in/shreyas-vasu-4b1271333/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="#projects">Projects</a>
-      <a class="btn" href="assets/Shreyas_Vasu_Resume.pdf" data-resume>Resume</a>
-      <a class="btn btn-coral" href="https://github.com/shreyasvasu" target="_blank" rel="noopener">GitHub</a>
-    </div>
+  <div class="hero-foot">
+    <span class="tag-mono">SHREYAS'S LITTLE LAB · POPULATION: ONE BUILDER, MANY TERMINALS</span>
+    <span class="scroll-cue">SCROLL<i></i></span>
   </div>
 </section>
 
-<!-- ================= MARQUEE ================= -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Edge AI</span><i>✦</i><span>Google Gemini</span><i>✦</i><span>Conformal Prediction</span><i>✦</i><span>ESP32 + IoT</span><i>✦</i><span>Flask · FastAPI</span><i>✦</i><span>React</span><i>✦</i><span>Mesh Networking</span><i>✦</i><span>LightGBM</span><i>✦</i>
-    <span>Edge AI</span><i>✦</i><span>Google Gemini</span><i>✦</i><span>Conformal Prediction</span><i>✦</i><span>ESP32 + IoT</span><i>✦</i><span>Flask · FastAPI</span><i>✦</i><span>React</span><i>✦</i><span>Mesh Networking</span><i>✦</i><span>LightGBM</span><i>✦</i>
+<!-- ================= STORY ================= -->
+<section class="story" id="about">
+  <p class="story-text reveal">
+    Hi, I'm Shreyas <span class="emo">👋</span> I build AI that keeps working when things go wrong:
+    a field-medic assistant <a href="#p-aegis" class="inpill"><img src="assets/projects/aegis-alpha.webp" alt="">AEGIS-α</a> that works offline <span class="emo">📡</span>
+    a price advisor <a href="#p-sos" class="inpill"><img src="assets/projects/sell-or-store.webp" alt="">Sell-or-Store</a> that tells farmers how sure it is <span class="emo">🌾</span>
+    a skin scanner <a href="#p-glow" class="inpill"><img src="assets/projects/glowup-ai.webp" alt="">GlowUp AI</a> built in 24 hours <span class="emo">⚡</span>
+    an API router <a href="#p-flex" class="inpill"><img src="assets/projects/flexapi.webp" alt="">FlexAPI</a> that refuses to flap <span class="emo">🔁</span>
+    and a community <a href="#journey" class="inpill inpill-dark"><span class="inpill-dot">✦</span>Epoch</a> where 22 builders shipped 8 projects <span class="emo">🚀</span>
+    one Top 10 hackathon finish <span class="emo">🏆</span> and one lesson: <em>a model honest about its uncertainty beats one that only looks accurate</em> <span class="emo">🧘</span>
+  </p>
+  <div class="story-links reveal">
+    <a href="#work">POKE THE WORK</a>
+    <a href="#wins">COUNT THE TROPHIES</a>
+    <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume>FLIP THROUGH THE RESUME</a>
+  </div>
+</section>
+
+<!-- ================= PROOF CARD ================= -->
+<section class="proof-wrap">
+  <div class="proof reveal">
+    <div class="proof-head">
+      <h2>Proof, not promises<span class="dot-coral">.</span></h2>
+      <p class="mono-sm">Small flex, big smile. Every line checks out.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-big">
+        <span class="mono-label">CALIBRATED COVERAGE</span>
+        <span class="big-num">92.5<small>%</small></span>
+        <span class="mono-sm">vs a 90% target · Sell-or-Store</span>
+      </div>
+      <div class="proof-col">
+        <span class="mono-label">🏆 RECOGNITION</span>
+        <span class="mk mk-coral">Top 10, CMRIT Hackathon</span>
+        <span class="mk mk-coral">Presented at DSU Hackathon</span>
+        <span class="mk mk-coral">Mentor, CBC 2.0 hackathon</span>
+      </div>
+      <div class="proof-col">
+        <span class="mono-label">🚀 BUILDING</span>
+        <span class="mk mk-navy">Founder, Epoch AIML</span>
+        <span class="mk mk-navy">Web Dev Intern, The Skybrisk</span>
+        <span class="mk mk-navy">63 public GitHub repos</span>
+      </div>
+      <div class="proof-col">
+        <span class="mono-label">🎓 STUDYING</span>
+        <span class="mk mk-coral">B.E. AIML, GAT ’28</span>
+        <span class="mk mk-coral">GATE DA prep</span>
+        <span class="mk mk-coral">3 certifications</span>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true">CERTIFIED HONEST · NO OVERFITTING ·</div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER CARDS ================= -->
+<section class="chapters" aria-label="Chapters">
+  <a href="#about" class="chap ch-navy reveal"><span class="chap-n">01</span><span class="chap-t">Hello</span><span class="chap-s">who I am</span><span class="chap-i">✦</span></a>
+  <a href="#work" class="chap ch-coral reveal"><span class="chap-n">02</span><span class="chap-t">The work</span><span class="chap-s">what I've shipped</span><span class="chap-i">🚀</span></a>
+  <a href="#journey" class="chap ch-cream reveal"><span class="chap-n">03</span><span class="chap-t">The journey</span><span class="chap-s">where I've built</span><span class="chap-i">🧭</span></a>
+  <a href="#wins" class="chap ch-peach reveal"><span class="chap-n">04</span><span class="chap-t">The wins</span><span class="chap-s">small trophies</span><span class="chap-i">🏆</span></a>
+  <a href="#toolkit" class="chap ch-ink reveal"><span class="chap-n">05</span><span class="chap-t">The toolkit</span><span class="chap-s">what I build with</span><span class="chap-i">🧰</span></a>
+  <a href="#contact" class="chap ch-white reveal"><span class="chap-n">06</span><span class="chap-t">Say hi</span><span class="chap-s">let's build</span><span class="chap-i">👋</span></a>
+</section>
+
+<!-- ================= TOOL MARQUEE ================= -->
+<div class="tools" aria-hidden="true">
+  <div class="tools-track">
+    <span>Python</span><span>LightGBM</span><span>Gemini API</span><span>Flask</span><span>FastAPI</span><span>React</span><span>ESP32</span><span>Gemma 2</span><span>YOLOv8</span><span>scikit-learn</span><span>MySQL</span><span>Tailwind</span><span>Git</span><span>pen &amp; paper</span>
+    <span>Python</span><span>LightGBM</span><span>Gemini API</span><span>Flask</span><span>FastAPI</span><span>React</span><span>ESP32</span><span>Gemma 2</span><span>YOLOv8</span><span>scikit-learn</span><span>MySQL</span><span>Tailwind</span><span>Git</span><span>pen &amp; paper</span>
   </div>
 </div>
 
-<!-- ================= ABOUT / FOCUS ================= -->
-<section class="section" id="about">
-  <div class="section-head reveal">
-    <span class="kicker">01 / What I work on</span>
-    <h2>AI that keeps working when things go wrong.</h2>
-  </div>
-  <div class="focus-grid">
-    <article class="focus reveal">
-      <div class="focus-icon">
-        <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
-      </div>
-      <h3>Edge &amp; on-device AI</h3>
-      <p>Vision and language models that run locally with no cloud dependency, on hardware like ESP32 and CPU-only machines.</p>
-    </article>
-    <article class="focus reveal">
-      <div class="focus-icon">
-        <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11 16.8 6M7.3 13l9.5 5M19 7.5v9"/></svg>
-      </div>
-      <h3>Resilient systems</h3>
-      <p>Automatic failover, graceful degradation, and communication that keeps working when networks are jammed or down.</p>
-    </article>
-    <article class="focus reveal">
-      <div class="focus-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4 16c3-1 4-9 8-9s5 8 8 9"/><path d="M8 20v-4M16 20v-4" stroke-dasharray="2 2"/></svg>
-      </div>
-      <h3>Honest ML</h3>
-      <p>Predictions that report how sure they are, using quantile regression and conformal calibration.</p>
-    </article>
-    <article class="focus reveal">
-      <div class="focus-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9l2 2-2 2M12 13h4"/></svg>
-      </div>
-      <h3>Full-stack delivery</h3>
-      <p>Flask and FastAPI backends, React frontends, and relational databases built to be used by real people.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section class="section section-alt" id="projects">
-  <div class="section-head reveal">
-    <span class="kicker">02 / Projects</span>
-    <h2>Selected work.</h2>
-    <p class="section-sub">Problems first, then the system I built to solve them.</p>
+<!-- ================= WORK ================= -->
+<section class="work" id="work">
+  <div class="work-head reveal">
+    <span class="act"><i></i>Act 02 of 06 · The work</span>
+    <h2>Things with my <em>fingerprints</em> on them.</h2>
+    <p>Four projects, each starting with a real problem and ending in something that runs. Problem first, then the system.</p>
   </div>
 
-  <div class="projects">
+  <article class="proj reveal" id="p-sos">
+    <div class="win">
+      <div class="win-bar"><i></i><i></i><i></i><span>github.com/shreyasvasu/Sell-or-Store</span></div>
+      <img src="assets/projects/sell-or-store.webp" alt="Sell-or-Store app home screen" loading="lazy">
+    </div>
+    <div class="proj-copy">
+      <div class="proj-tags"><span class="sticker">Solo · Nov 2026</span><span class="sticker sticker-cream">92.5% coverage</span></div>
+      <h3>Sell-or-Store</h3>
+      <p class="proj-sub">Uncertainty-aware decision support for farmers</p>
+      <p>After harvest, a farmer must decide: sell now, or store and sell later. Instead of one price, it forecasts a <strong>calibrated range</strong> and turns it into advice.</p>
+      <ul>
+        <li>LightGBM quantile regression + conformal calibration across tomato, onion and potato in 5 Karnataka districts.</li>
+        <li>Sell / Store / Split / Not sure, based on storage cost, spoilage and risk appetite.</li>
+        <li>Backtest on 1,613 forecasts avoided the ₹1.29/kg loss of always storing.</li>
+        <li>Flask + React, English and Kannada, with offline Kannada voice.</li>
+      </ul>
+      <div class="stack"><span>Python</span><span>LightGBM</span><span>CQR</span><span>Flask</span><span>React</span></div>
+      <a class="proj-link" href="https://github.com/shreyasvasu/Sell-or-Store" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </div>
+  </article>
 
-    <!-- Sell-or-Store -->
-    <article class="project reveal">
-      <div class="shot" data-initials="S/S">
-        <img src="assets/projects/sell-or-store.webp" alt="Sell-or-Store screenshot" loading="lazy">
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="badge badge-coral">92.5% coverage vs 90% target</span>
-          <span class="meta-txt">Solo · Nov 2026</span>
-        </div>
-        <h3>Sell-or-Store</h3>
-        <p class="tagline">Uncertainty-aware decision support for farmers</p>
-        <p class="problem">After harvest, a farmer must decide: sell now, or store and sell later. I built a system that forecasts a calibrated price range, not a single number, and turns it into advice.</p>
-        <ul>
-          <li>LightGBM quantile regression + conformalized quantile regression (CQR) for tomato, onion and potato across 5 Karnataka districts, 2 and 4 weeks ahead.</li>
-          <li>Sell / Store / Split / Not sure advice from the farmer's storage cost, spoilage rate and risk appetite.</li>
-          <li>Backtested on 1,613 forecasts: avoided the ₹1.29/kg loss of always storing. Failure cases reported honestly.</li>
-          <li>Flask API + React UI in English and Kannada, with offline Kannada voice output.</li>
-        </ul>
-        <div class="tags"><span>Python</span><span>LightGBM</span><span>Conformal Prediction</span><span>Flask</span><span>React</span><span>Tailwind</span></div>
-        <div class="links">
-          <a href="https://github.com/shreyasvasu/Sell-or-Store" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-      </div>
-    </article>
+  <article class="proj proj-rev reveal" id="p-aegis">
+    <div class="win win-dark">
+      <div class="win-bar"><i></i><i></i><i></i><span>aegis · tactical dashboard</span></div>
+      <img src="assets/projects/aegis-alpha.webp" alt="AEGIS-alpha squad vitals dashboard" loading="lazy">
+    </div>
+    <div class="proj-copy">
+      <div class="proj-tags"><span class="sticker">DSU Hackathon</span><span class="sticker sticker-cream">Team of 2</span></div>
+      <h3>AEGIS-α</h3>
+      <p class="proj-sub">Automated Emergency Ground Intelligence System</p>
+      <p>A field medic's tools fail the moment the network drops. AEGIS-α mixes vision AI, wearables and mesh networking so it <strong>keeps working offline</strong>.</p>
+      <ul>
+        <li>Gemini 3.1 Flash-Lite spots wounds and overlays TCCC MARCH triage on an AR HUD.</li>
+        <li>ESP32-CAM + MAX30102 stream heart rate and SpO₂ hands-free.</li>
+        <li>MANET mesh failover: Wi-Fi → GSM → SMS when networks are jammed.</li>
+        <li>Moondream2 + Gemma 2 9B on-device, zero cloud.</li>
+      </ul>
+      <div class="stack"><span>Gemini</span><span>ESP32</span><span>Edge AI</span><span>MANET</span></div>
+      <a class="proj-link" href="https://lnkd.in/gcTZDsTj" target="_blank" rel="noopener">Watch the demo ↗</a>
+    </div>
+  </article>
 
-    <!-- AEGIS -->
-    <article class="project reveal">
-      <div class="shot" data-initials="Æ">
-        <img src="assets/projects/aegis-alpha.webp" alt="AEGIS-alpha screenshot" loading="lazy">
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="badge badge-coral">DSU Hackathon</span>
-          <span class="meta-txt">Team of 2</span>
-        </div>
-        <h3>AEGIS-α</h3>
-        <p class="tagline">Automated Emergency Ground Intelligence System</p>
-        <p class="problem">A field medic's support systems fail the moment the network drops. AEGIS-α combines vision AI, wearable sensors and mesh networking so it keeps working when connectivity doesn't.</p>
-        <ul>
-          <li>Gemini 3.1 Flash-Lite spots wounds in real time and overlays TCCC MARCH triage steps on an AR HUD.</li>
-          <li>ESP32-CAM + MAX30102 over I2C stream heart rate and SpO₂ hands-free.</li>
-          <li>MANET mesh with automatic failover (Wi-Fi → GSM → SMS) for alerts on jammed networks.</li>
-          <li>Moondream2 + Gemma 2 9B run on-device with zero cloud dependency.</li>
-        </ul>
-        <div class="tags"><span>Gemini</span><span>ESP32</span><span>Edge AI</span><span>Computer Vision</span><span>MANET</span></div>
-        <div class="links">
-          <a href="https://lnkd.in/gcTZDsTj" target="_blank" rel="noopener">Demo video ↗</a>
-        </div>
-      </div>
-    </article>
+  <article class="proj reveal" id="p-glow">
+    <div class="win win-dark">
+      <div class="win-bar"><i></i><i></i><i></i><span>glowup-ai · skin analysis</span></div>
+      <img src="assets/projects/glowup-ai.webp" alt="GlowUp AI skin analysis results screen" loading="lazy">
+    </div>
+    <div class="proj-copy">
+      <div class="proj-tags"><span class="sticker">Top 10 · CMRIT</span><span class="sticker sticker-cream">24 hours · team of 3</span></div>
+      <h3>GlowUp AI</h3>
+      <p class="proj-sub">AI skin analysis web app</p>
+      <p>Many people can't easily reach a dermatologist. GlowUp AI reads skin from <strong>a single photo</strong> and returns a personalised, actionable report.</p>
+      <ul>
+        <li>Gemini 3.1 Flash vision scores acne, dryness and pigmentation by region.</li>
+        <li>Advice tailored to skin type and allergies, from an India-first product database.</li>
+        <li>Routes cases needing a doctor to nearby dermatologists via Google Maps.</li>
+      </ul>
+      <div class="stack"><span>Gemini</span><span>Computer Vision</span><span>Maps API</span></div>
+      <a class="proj-link" href="https://github.com/shreyasvasu/GLOWUP-AI-" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </div>
+  </article>
 
-    <!-- GlowUp -->
-    <article class="project reveal">
-      <div class="shot" data-initials="G✦">
-        <img src="assets/projects/glowup-ai.webp" alt="GlowUp AI screenshot" loading="lazy">
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="badge badge-coral">Top 10 · CMRIT Hackathon</span>
-          <span class="meta-txt">Team of 3 · 24 hrs</span>
-        </div>
-        <h3>GlowUp AI</h3>
-        <p class="tagline">AI skin analysis web app</p>
-        <p class="problem">Many people can't easily reach a dermatologist. GlowUp AI analyses skin from a single photo and gives a personalised, actionable report, built in a 24-hour sprint.</p>
-        <ul>
-          <li>Gemini 3.1 Flash vision scores acne, dryness and pigmentation by skin region.</li>
-          <li>Reports tailored to skin type and allergies, with an India-first product database.</li>
-          <li>Routes cases needing a doctor to nearby dermatologists via Google Maps; 15-day re-scan to track progress.</li>
-        </ul>
-        <div class="tags"><span>Gemini</span><span>Computer Vision</span><span>Google Maps API</span><span>Web App</span></div>
-        <div class="links">
-          <a href="https://github.com/shreyasvasu/GLOWUP-AI-" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-      </div>
-    </article>
+  <article class="proj proj-rev reveal" id="p-flex">
+    <div class="win">
+      <div class="win-bar"><i></i><i></i><i></i><span>flexapi · routing console</span></div>
+      <img src="assets/projects/flexapi.webp" alt="FlexAPI Health landing page" loading="lazy">
+    </div>
+    <div class="proj-copy">
+      <div class="proj-tags"><span class="sticker">Solo · 2026</span><span class="sticker sticker-cream">Distributed systems</span></div>
+      <h3>FlexAPI / SmartAPI</h3>
+      <p class="proj-sub">Adaptive API orchestration</p>
+      <p>Apps break when a third-party API slows down or dies. FlexAPI <strong>picks the healthiest provider</strong> for every request and switches automatically.</p>
+      <ul>
+        <li>Scores providers on latency, cost, reliability and SLA.</li>
+        <li>Monitor → ML → Planner → Executor closed control loop.</li>
+        <li>Cooldown + switch penalty stops flapping; tested on a fault-injected Flask testbed.</li>
+      </ul>
+      <div class="stack"><span>Python</span><span>Flask</span><span>REST</span><span>ML</span></div>
+    </div>
+  </article>
 
-    <!-- FlexAPI -->
-    <article class="project reveal">
-      <div class="shot" data-initials="{API}">
-        <img src="assets/projects/flexapi.webp" alt="FlexAPI screenshot" loading="lazy">
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="badge">Distributed systems</span>
-          <span class="meta-txt">Solo · 2026</span>
-        </div>
-        <h3>FlexAPI / SmartAPI</h3>
-        <p class="tagline">Adaptive API orchestration</p>
-        <p class="problem">Apps that depend on third-party APIs break when a provider slows down, gets expensive or goes offline. FlexAPI picks the best provider per request and switches automatically.</p>
-        <ul>
-          <li>Scores providers on latency, cost, reliability and SLA; routes each call to the best one.</li>
-          <li>Monitor → ML → Planner → Executor closed control loop with automatic failover.</li>
-          <li>Cooldown + switch penalty prevents flapping; benchmarked on a fault-injected Flask testbed against static and circuit-breaker baselines.</li>
-        </ul>
-        <div class="tags"><span>Python</span><span>Flask</span><span>REST APIs</span><span>ML</span></div>
-      </div>
-    </article>
-  </div>
-
-  <div class="mini-projects">
-    <article class="mini reveal">
-      <div class="mini-top"><h3>Jarvis</h3><span class="badge badge-outline">In progress</span></div>
-      <p>A local-first voice assistant for Windows. Small quantized models on CPU-only hardware, speech processed on-device, nothing sent to the cloud.</p>
-      <div class="tags"><span>Python</span><span>On-device AI</span><span>Speech</span></div>
-    </article>
-    <article class="mini reveal">
-      <div class="mini-top"><h3>epochaiml.in</h3><span class="badge badge-outline">Live</span></div>
-      <p>The showcase site for Epoch: builder profiles, Project of the Week and Builder of the Month, showcasing 8+ member projects.</p>
-      <div class="links"><a href="https://epochaiml.in" target="_blank" rel="noopener">Visit site ↗</a></div>
-    </article>
-    <article class="mini mini-cta reveal">
-      <h3>63 public repos</h3>
-      <p>ERP starter kit, attendance systems, algorithm visualisers, data analytics projects and more.</p>
-      <div class="links"><a href="https://github.com/shreyasvasu?tab=repositories" target="_blank" rel="noopener">Browse GitHub ↗</a></div>
-    </article>
+  <div class="minis">
+    <div class="mini reveal"><span class="sticker sticker-cream">In progress</span><h4>Jarvis</h4><p>Local-first voice assistant for Windows. Small quantized models, CPU-only, nothing leaves the machine.</p></div>
+    <div class="mini reveal"><span class="sticker sticker-cream">Live</span><h4>epochaiml.in</h4><p>Epoch's showcase: builder profiles, Project of the Week and Builder of the Month.</p><a href="https://epochaiml.in" target="_blank" rel="noopener">Visit ↗</a></div>
+    <div class="mini mini-dark reveal"><span class="sticker">63 repos</span><h4>The rest of the drawer</h4><p>ERP starter kit, attendance systems, algorithm visualisers, data analytics minis.</p><a href="https://github.com/shreyasvasu?tab=repositories" target="_blank" rel="noopener">Browse GitHub ↗</a></div>
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
-<section class="section" id="experience">
-  <div class="section-head reveal">
-    <span class="kicker">03 / Experience</span>
-    <h2>Where I've built.</h2>
+<!-- ================= JOURNEY ================= -->
+<section class="journey" id="journey">
+  <div class="sec-head reveal">
+    <span class="kick">ACT 03 · THE JOURNEY</span>
+    <h2>Where I've <em>built</em>.</h2>
   </div>
-
-  <div class="timeline">
-    <article class="t-item reveal">
-      <div class="t-date">Oct 2026 – Present</div>
-      <div class="t-card">
-        <h3>Founder / Founding Lead</h3>
-        <p class="t-org">Epoch AIML (Epoch Dev Community) · Deepnexus, GAT</p>
-        <p>Founded Epoch to help students learn AI by building real projects, shipping them in public, and improving with every build.</p>
+  <div class="j-list">
+    <article class="j-card reveal">
+      <div class="j-side"><span class="j-date">OCT 2026 → NOW</span><span class="j-badge">Founder</span></div>
+      <div class="j-main">
+        <h3>Epoch AIML <span>· Epoch Dev Community</span></h3>
+        <p class="j-sub">Dev community of Deepnexus, the AIML club at GAT · <a href="https://epochaiml.in" target="_blank" rel="noopener">epochaiml.in ↗</a></p>
+        <p>Founded Epoch so students learn AI by building real projects, shipping them in public, and improving with every build.</p>
         <ul>
           <li>Set direction, season goals and partnerships; lead a core team of 5 student leads.</li>
-          <li>Teach sessions on transformers (“Attention Is All You Need”), Gemini API chatbots, agent-assisted development with Google Antigravity, ESP32 sensor-to-cloud and Flask backends.</li>
-          <li>Built epochaiml.in, the community's showcase platform.</li>
+          <li>Teach sessions on transformers, Gemini API chatbots, agent-assisted dev with Google Antigravity, ESP32 sensor-to-cloud and Flask backends.</li>
+          <li>Mentored ~10 teams and ran marketing for CBC 2.0: 130 teams registered in under two weeks.</li>
         </ul>
+        <div class="j-stats"><span><b>65+</b> members</span><span><b>22</b> builders</span><span><b>8+</b> projects shipped</span></div>
       </div>
     </article>
-    <article class="t-item reveal">
-      <div class="t-date">Jan 2026 – Apr 2026</div>
-      <div class="t-card">
-        <h3>Web Development Intern</h3>
-        <p class="t-org">The Skybrisk</p>
+    <article class="j-card reveal">
+      <div class="j-side"><span class="j-date">JAN → APR 2026</span><span class="j-badge j-badge-navy">Intern</span></div>
+      <div class="j-main">
+        <h3>The Skybrisk <span>· Web Development Intern</span></h3>
+        <p>Full-stack role building ERP Management, CRM and Bookstore Management web apps.</p>
         <ul>
-          <li>Developed ERP Management, CRM and Bookstore Management web applications in a full-stack role.</li>
-          <li>Integrated REST APIs and designed relational database schemas for multi-user workflows.</li>
-          <li>Built responsive, scalable front-end and back-end modules in a team environment.</li>
+          <li>Integrated REST APIs and designed relational schemas for multi-user workflows.</li>
+          <li>Built responsive, scalable front-end and back-end modules in a team.</li>
         </ul>
+      </div>
+    </article>
+    <article class="j-card reveal">
+      <div class="j-side"><span class="j-date">2024 → 2028</span><span class="j-badge j-badge-cream">Student</span></div>
+      <div class="j-main">
+        <h3>Global Academy of Technology <span>· B.E. AI &amp; ML</span></h3>
+        <p>Bengaluru. Before that, Pre-University (PCMB) at MES PU College, 2022–2024. Currently preparing for GATE (Data Science &amp; AI).</p>
       </div>
     </article>
   </div>
 </section>
 
-<!-- ================= COMMUNITY / ACHIEVEMENTS ================= -->
-<section class="section section-navy" id="community">
-  <div class="section-head reveal">
-    <span class="kicker">04 / Community &amp; achievements</span>
-    <h2>Building builders.</h2>
+<!-- ================= WINS (trophy deck) ================= -->
+<section class="wins" id="wins">
+  <div class="wins-left reveal">
+    <span class="kick">THE TROPHY CABINET · 2024 → 2026</span>
+    <h2>A few tiny trophies<span class="dot-coral">.</span></h2>
+    <div class="counter"><span class="cnt-now" id="deckNow">01</span><span class="cnt-of">/<span id="deckTotal">05</span></span>
+      <div class="cnt-bar"><span id="deckBar"></span></div>
+    </div>
+    <div class="deck-btns">
+      <button class="pill-btn pill-small" id="deckPrev" aria-label="Previous trophy">← prev</button>
+      <button class="pill-btn pill-small" id="deckNext" aria-label="Next trophy">next →</button>
+    </div>
+    <p class="mono-sm deck-hint">tap the deck to flip</p>
   </div>
-  <div class="stats">
-    <div class="stat reveal"><span class="num" data-count="65">0</span><span class="plus">+</span><p>Epoch members</p></div>
-    <div class="stat reveal"><span class="num" data-count="22">0</span><p>Builders shipping</p></div>
-    <div class="stat reveal"><span class="num" data-count="8">0</span><span class="plus">+</span><p>Projects shipped with public repos</p></div>
-    <div class="stat reveal"><span class="num" data-count="130">0</span><p>Teams registered at CBC 2.0 in under 2 weeks</p></div>
-  </div>
-  <div class="awards">
-    <div class="award reveal"><span class="a-ico">🏆</span><div><h4>Top 10 Finalist</h4><p>CMRIT Hackathon, GlowUp AI</p></div></div>
-    <div class="award reveal"><span class="a-ico">⚡</span><div><h4>Presented AEGIS-α</h4><p>DSU Hackathon</p></div></div>
-    <div class="award reveal"><span class="a-ico">🤝</span><div><h4>Mentor &amp; marketing lead</h4><p>~10 teams mentored at CBC 2.0</p></div></div>
+  <div class="deck reveal" id="deck" role="list" tabindex="0" aria-label="Trophy cards, press arrow keys to flip">
+    <div class="t-card tc-coral" role="listitem"><span class="tc-n">01</span><span class="tc-emo">🏆</span><span class="tc-big">Top 10</span><span class="tc-sub">CMRIT HACKATHON</span><span class="tc-pill">GlowUp AI · 24 hrs</span></div>
+    <div class="t-card tc-navy" role="listitem"><span class="tc-n">02</span><span class="tc-emo">📡</span><span class="tc-big">Presented</span><span class="tc-sub">DSU HACKATHON</span><span class="tc-pill">AEGIS-α · edge AI + mesh</span></div>
+    <div class="t-card tc-cream" role="listitem"><span class="tc-n">03</span><span class="tc-emo">✦</span><span class="tc-big">Founded</span><span class="tc-sub">EPOCH DEV COMMUNITY</span><span class="tc-pill">22 builders · 8+ projects</span></div>
+    <div class="t-card tc-peach" role="listitem"><span class="tc-n">04</span><span class="tc-emo">🤝</span><span class="tc-big">130 teams</span><span class="tc-sub">CBC 2.0 IN UNDER 2 WEEKS</span><span class="tc-pill">marketing + ~10 teams mentored</span></div>
+    <div class="t-card tc-ink" role="listitem"><span class="tc-n">05</span><span class="tc-emo">🎯</span><span class="tc-big">92.5%</span><span class="tc-sub">CALIBRATED COVERAGE</span><span class="tc-pill">Sell-or-Store · 90% target</span></div>
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
-<section class="section" id="skills">
-  <div class="section-head reveal">
-    <span class="kicker">05 / Toolkit</span>
-    <h2>Skills.</h2>
+<!-- ================= TOOLKIT ================= -->
+<section class="toolkit" id="toolkit">
+  <div class="sec-head reveal">
+    <span class="kick">ACT 05 · THE TOOLKIT</span>
+    <h2>What's on my <em>desk</em>.</h2>
   </div>
-  <div class="skills">
-    <div class="skill-group reveal"><h4>Languages</h4><div class="chips"><span>Python</span><span>SQL</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div>
-    <div class="skill-group reveal"><h4>Frameworks &amp; libraries</h4><div class="chips"><span>Flask</span><span>FastAPI</span><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Node.js / Express</span><span>scikit-learn</span><span>NumPy</span><span>pandas</span><span>LightGBM</span><span>Recharts</span></div></div>
-    <div class="skill-group reveal"><h4>AI / ML &amp; edge</h4><div class="chips"><span>Gemini API</span><span>Moondream2</span><span>Gemma 2</span><span>YOLOv8</span><span>Computer Vision</span><span>Quantile Regression</span><span>Conformal Prediction</span><span>Time-series Forecasting</span><span>ESP32</span><span>I2C Sensors</span><span>MANET</span></div></div>
-    <div class="skill-group reveal"><h4>Core CS &amp; tools</h4><div class="chips"><span>DSA</span><span>DBMS</span><span>REST API Design</span><span>Machine Learning</span><span>Git</span><span>GitHub</span><span>MySQL</span><span>Jupyter</span></div></div>
-  </div>
-
-  <div class="edu-cert">
-    <div class="edu reveal">
-      <h4>Education</h4>
-      <div class="edu-row"><span class="edu-date">2024 – 2028</span><div><strong>Global Academy of Technology, Bengaluru</strong><p>B.E. in Artificial Intelligence &amp; Machine Learning</p></div></div>
-      <div class="edu-row"><span class="edu-date">2022 – 2024</span><div><strong>MES PU College of Arts, Commerce and Science</strong><p>Pre-University (PCMB)</p></div></div>
-      <p class="note">Currently preparing for GATE (Data Science &amp; AI).</p>
-    </div>
-    <div class="edu reveal">
-      <h4>Certifications</h4>
-      <ul class="cert-list">
-        <li>Web Developer Bootcamp with Flask and Python</li>
-        <li>Generative AI for Computer Vision</li>
-        <li>Web Developer Internship</li>
-      </ul>
-    </div>
+  <div class="kit-grid">
+    <div class="kit reveal"><span class="kit-h">LANGUAGES</span><div class="kit-chips"><span>Python</span><span>SQL</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div>
+    <div class="kit reveal"><span class="kit-h">FRAMEWORKS &amp; LIBRARIES</span><div class="kit-chips"><span>Flask</span><span>FastAPI</span><span>React</span><span>Vite</span><span>Tailwind</span><span>Node / Express</span><span>scikit-learn</span><span>NumPy</span><span>pandas</span><span>LightGBM</span><span>Recharts</span></div></div>
+    <div class="kit reveal"><span class="kit-h">AI / ML &amp; EDGE</span><div class="kit-chips"><span>Gemini API</span><span>Moondream2</span><span>Gemma 2</span><span>YOLOv8</span><span>Computer Vision</span><span>Quantile Regression</span><span>Conformal Prediction</span><span>Time-series</span><span>ESP32</span><span>I2C Sensors</span><span>MANET</span></div></div>
+    <div class="kit reveal"><span class="kit-h">CORE &amp; TOOLS</span><div class="kit-chips"><span>DSA</span><span>DBMS</span><span>REST API Design</span><span>Git</span><span>GitHub</span><span>MySQL</span><span>Jupyter</span></div></div>
+    <div class="kit kit-wide reveal"><span class="kit-h">CERTIFICATIONS</span><div class="kit-chips kit-certs"><span>📜 Web Developer Bootcamp with Flask and Python</span><span>📜 Generative AI for Computer Vision</span><span>📜 Web Developer Internship</span></div></div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
+<!-- ================= CONTACT (ticket) ================= -->
 <section class="contact" id="contact">
-  <div class="contact-inner reveal">
-    <span class="kicker">06 / Contact</span>
-    <h2>Let's build something that<br><span class="hl">doesn't break</span>.</h2>
-    <p>I'm looking for internships in edge AI, on-device ML, reliable systems, or applied ML for real-world decisions.</p>
-    <a class="mail" href="mailto:mathsshreyas@gmail.com">mathsshreyas@gmail.com</a>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/shreyas-vasu-4b1271333/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/shreyasvasu" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://epochaiml.in" target="_blank" rel="noopener">Epoch</a>
-      <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume>Resume</a>
+  <div class="ticket reveal">
+    <div class="ticket-main">
+      <span class="kick kick-light">ADMIT ONE · ACT 06 · SAY HI</span>
+      <h2>Let's build something that <em>doesn't break</em>.</h2>
+      <p>Looking for internships in edge AI, on-device ML, reliable systems, or applied ML for real-world decisions.</p>
+      <a class="mail" href="mailto:mathsshreyas@gmail.com">mathsshreyas@gmail.com</a>
+      <div class="t-links">
+        <a href="https://www.linkedin.com/in/shreyas-vasu-4b1271333/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/shreyasvasu" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://epochaiml.in" target="_blank" rel="noopener">Epoch ↗</a>
+        <a href="assets/Shreyas_Vasu_Resume.pdf" data-resume>Resume</a>
+      </div>
     </div>
-    <p class="loc">📍 Bengaluru, Karnataka, India</p>
+    <div class="ticket-stub">
+      <span class="stub-l">FROM</span><span class="stub-v">BLR</span>
+      <span class="stub-l">TO</span><span class="stub-v">YOUR TEAM</span>
+      <span class="stub-l">SEAT</span><span class="stub-v">AI/ML · 2027</span>
+      <div class="barcode" aria-hidden="true"></div>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer class="footer">
-  <span>© <span id="year"></span> Shreyas Vasu</span>
-  <a href="#top">Back to top ↑</a>
+  <span>© <span id="year"></span> Shreyas Vasu · made with chai in Bengaluru</span>
+  <a href="#top">back to top ↑</a>
 </footer>
 
 <!-- ================= RESUME MODAL ================= -->
@@ -403,15 +396,14 @@
   <div class="modal-panel">
     <div class="modal-bar">
       <div>
-        <span class="kicker">Resume</span>
+        <span class="kick">RESUME</span>
         <h3 id="resumeTitle">Shreyas Vasu</h3>
       </div>
       <div class="modal-actions">
-        <a class="btn btn-coral btn-sm" href="assets/Shreyas_Vasu_Resume.pdf" download="Shreyas_Vasu_Resume.pdf">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
-          Download
+        <a class="pill-btn pill-small" href="assets/Shreyas_Vasu_Resume.pdf" download="Shreyas_Vasu_Resume.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>Download
         </a>
-        <a class="btn btn-ghost btn-sm" href="assets/Shreyas_Vasu_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <a class="pill-btn pill-small pill-ghost-dark hide-sm" href="assets/Shreyas_Vasu_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
         <button class="modal-close" data-close aria-label="Close resume preview">×</button>
       </div>
     </div>

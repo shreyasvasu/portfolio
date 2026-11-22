@@ -1,34 +1,60 @@
-// Footer year
+// ---------- Storage helpers (never throw) ----------
+const store = {
+  get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* ignore */ } },
+};
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---------- Intro screen (once per session, skippable) ----------
+const intro = document.getElementById('intro');
+if (store.get('introSeen') || reduceMotion) {
+  document.documentElement.classList.add('no-intro');
+} else {
+  document.body.classList.add('intro-on');
+  const endIntro = () => {
+    if (intro.classList.contains('out')) return;
+    intro.classList.add('out');
+    document.body.classList.remove('intro-on');
+    store.set('introSeen', '1');
+    setTimeout(() => intro.remove(), 700);
+  };
+  intro.addEventListener('click', endIntro);
+  document.addEventListener('keydown', endIntro, { once: true });
+  setTimeout(endIntro, 2300);
+}
+
+// ---------- Footer year ----------
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sticky nav shadow
-const nav = document.querySelector('.nav');
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 10);
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
-
-// Mobile menu
+// ---------- Mobile menu ----------
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
+const setMenu = open => {
+  navLinks.classList.toggle('open', open);
   burger.classList.toggle('open', open);
   burger.setAttribute('aria-expanded', open);
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  navLinks.classList.remove('open');
-  burger.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false');
-}));
+};
+burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-// Resume preview modal
+// ---------- Design-tool selection frame: live size label ----------
+const frame = document.getElementById('frame');
+const frameSize = document.getElementById('frameSize');
+const updateSize = () => {
+  frameSize.textContent = `${Math.round(frame.offsetWidth)} × ${Math.round(frame.offsetHeight)}`;
+};
+updateSize();
+window.addEventListener('resize', updateSize);
+if (document.fonts) document.fonts.ready.then(updateSize);
+
+// ---------- Resume preview modal ----------
 const modal = document.getElementById('resumeModal');
-const frame = document.getElementById('resumeFrame');
+const resumeFrame = document.getElementById('resumeFrame');
 let lastFocus = null;
 const openResume = e => {
   e.preventDefault();
   lastFocus = document.activeElement;
-  if (!frame.src) frame.src = frame.dataset.src; // load PDF only when first opened
+  if (!resumeFrame.src) resumeFrame.src = resumeFrame.dataset.src; // load PDF on first open
   modal.hidden = false;
   document.body.classList.add('modal-open');
   modal.querySelector('.modal-close').focus();
@@ -42,53 +68,63 @@ document.querySelectorAll('[data-resume]').forEach(a => a.addEventListener('clic
 modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeResume));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeResume(); });
 
-// Project screenshots: drop images into assets/projects/ with the file names
-// used in index.html. Until then, a styled placeholder is shown.
-document.querySelectorAll('.shot img').forEach(img => {
-  const markEmpty = () => img.parentElement.classList.add('empty');
-  if (img.complete && img.naturalWidth === 0) markEmpty();
-  img.addEventListener('error', markEmpty);
-});
-
-// Reveal on scroll
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+// ---------- Reveal on scroll ----------
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !reduceMotion) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 3) * 80}ms`;
+    io.observe(el);
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 4) * 70}ms`;
-  io.observe(el);
-});
+} else {
+  reveals.forEach(el => el.classList.add('in'));
+}
 
-// Count-up stats
-const counters = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    const target = +el.dataset.count;
-    const start = performance.now();
-    const dur = 1400;
-    const tick = now => {
-      const p = Math.min((now - start) / dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-    setTimeout(() => { el.textContent = target; }, dur + 300); // guarantee final value
-    counters.unobserve(el);
+// ---------- Trophy deck ----------
+const deck = document.getElementById('deck');
+const cards = [...deck.querySelectorAll('.t-card')];
+const nowEl = document.getElementById('deckNow');
+const bar = document.getElementById('deckBar');
+document.getElementById('deckTotal').textContent = String(cards.length).padStart(2, '0');
+let current = 0;
+const layout = () => {
+  cards.forEach((card, i) => {
+    const pos = (i - current + cards.length) % cards.length; // 0 = front
+    const rot = [0, 6, -5, 9, -8][pos] ?? 0;
+    const x = [0, 26, -22, 40, -36][pos] ?? 0;
+    const y = pos * 8;
+    card.style.zIndex = String(cards.length - pos);
+    card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${1 - pos * 0.04})`;
+    card.style.opacity = pos > 3 ? '0' : '1';
+    card.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
   });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counters.observe(el));
+  nowEl.textContent = String(current + 1).padStart(2, '0');
+  bar.style.width = `${((current + 1) / cards.length) * 100}%`;
+};
+const go = step => { current = (current + step + cards.length) % cards.length; layout(); };
+deck.addEventListener('click', () => go(1));
+deck.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+});
+document.getElementById('deckNext').addEventListener('click', () => go(1));
+document.getElementById('deckPrev').addEventListener('click', () => go(-1));
+layout();
 
-// Active nav link by section
+// ---------- Active nav link ----------
 const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 const sections = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-const spy = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
-    }
-  });
-}, { rootMargin: '-45% 0px -50% 0px' });
-sections.forEach(s => spy.observe(s));
+if ('IntersectionObserver' in window) {
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => spy.observe(s));
+}
